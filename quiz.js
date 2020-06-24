@@ -109,20 +109,28 @@ const STORE = {
         $('.start').on("click", function(){
             $('.startpage').addClass("hide")
             $('.question').removeClass("hide")
-            questionNumber++;
+    //update question number
+            $('.qnum').text(questionNumber + 1);
         });
     };
+// show question number and score
+    function scoreBoard() {
+        $(".start").on("click", function(){
+            $(".score").removeClass("hide");
+        })
+    }
 
 //render next question 
    
     function nextQuestion() {
         $('.check').on('click', function(){
-            $('.question').
+           
         })
     }
 
     function initQuiz() {
         startQuiz();
+        scoreBoard();
     }
 
     $(initQuiz);
