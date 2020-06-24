@@ -18,20 +18,24 @@
           <h1>Welcome to the best quiz ever!!</h1>
           <p>Review some web development stuff</p>
 
-          <button class="start-b">Start this awesome quiz!</button>
+          <button class="start">Start this awesome quiz!</button>
       </div>
       <div class="question hide">
         <form>
-          <legend class="questions">What are heading elements for?<legend>
-            <label for="answer"><input name="answer" type="radio" value="It tells where the head of a document is"> It tells where the head of a document is</label>
-            <label for="answer"><input name="answer" type="radio" value="For styling purposes"> For styling purposes</label>
-            <label for="answer"><input name="answer" type="radio" value=" To establish information hierarachy">  To establish information hierarachy</label>
-            <label for="answer"><input name="answer" type="radio" value="To establish authority"> To establish authority</label>
+            <fieldset>
+                <legend class="questions">What are heading elements for?<legend>
+                <label for="answer"><input name="answer" type="radio" value="It tells where the head of a document is"> It tells where the head of a document is</label>
+                <label for="answer"><input name="answer" type="radio" value="For styling purposes"> For styling purposes</label>
+                <label for="answer"><input name="answer" type="radio" value=" To establish information hierarachy">  To establish information hierarachy</label>
+                <label for="answer"><input name="answer" type="radio" value="To establish authority"> To establish authority</label>
+            <button class="check">Check My Answer Please?</button>
+            </fieldset>
         </form>
+
       </div>
 
       <div class="correct hide">
-          <p>You got it right :)<br> You must have been studying!</p>
+          <p>You got it right :)<br> You've been studying!</p>
           <button>Next Question</button>
       </div>
 
