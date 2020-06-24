@@ -1,0 +1,49 @@
+body {
+    margin: 20px;
+    background-color: lightgrey;
+}
+
+#start-b {
+    margin-bottom: 20px;
+}
+
+button {
+  background-color: whitesmoke;
+}
+
+header { 
+    display: flex;
+    justify-content: space-between;
+     
+    border: 1px solid black;
+  }
+  
+  header, #start, #question {
+    width: 90%; 
+    margin: auto;
+  
+  }
+
+  label {
+      display: block;
+  }
+
+  #questions {
+      margin-bottom: 20px;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    header, #start, #questions { 
+      width: 80%;
+      margin: auto;
+    }
+    h1 { font-size: 48px;}
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    header, #start, #questions { 
+      width: 60%;
+      margin: auto;
+    }
+    h1 { font-size: 60px;}
+  }

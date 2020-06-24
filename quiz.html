@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <header>
+        <div>Question: <span id="qnum">0</span>
+        </div>
+        <div>Score <span id="score">0</span>
+        </div>
+      </header>
+      <div id="startpage">
+          <h1>Welcome to the best quiz ever!!</h1>
+          <p>Review some web development stuff</p>
+
+          <button id="start-b">Start this awesome quiz!</button>
+      </div>
+      <div id="question">
+        <form>
+          <legend class="questions">What are heading elements for?<legend>
+            <label for="answer"><input name="answer" type="radio" value="It tells where the head of a document is"> It tells where the head of a document is</label>
+            <label for="answer"><input name="answer" type="radio" value="For styling purposes"> For styling purposes</label>
+            <label for="answer"><input name="answer" type="radio" value=" To establish information hierarachy">  To establish information hierarachy</label>
+            <label for="answer"><input name="answer" type="radio" value="To establish authority"> To establish authority</label>
+        </form>
+        <form>
+            <legend class="questions">How do you comment code in HTML?<legend>
+              <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+              <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+              <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+              <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+        </form>
+        <form>
+            <legend class="questions">What is an example of a psuedo-element?<legend>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+        </form>
+        <form>
+            <legend class="questions">What do psuedo-classes do?<legend>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+        </form>
+        <form>  
+            <legend class="questions">What is a README file?<legend>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+        </form> 
+        <form>     
+            <legend class="questions">What command should be used to look at a prior state of your repository?<legend>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+        </form> 
+        <form>
+            <legend class="questions">Which value is true in javascript?<legend>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+        </form>
+        <form>  
+            <legend>Which is not true of strict mode in javascript?<legend>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")">Strict mode eliminates some JavaScript silent errors by changing them to throw errors. </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> It disables features that are confusing or poorly thought out.</label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> Strict mode fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes be made to run faster than identical code that’s not strict mode.</label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> It helps you write JavaScript. </label>
+        </form>
+        <form>        
+            <legend>What is event.currentTarget?<legend>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")">The currentTarget event property returns the element whose event listeners triggered the event. </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+        </form>
+        <form>
+            <legend>What does .StopPrognation() do?<legend>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> The event.stopPropagation() method stops the bubbling of an event to parent elements, preventing any parent event handlers from being executed.</label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+                <label for="answer"><input name="answer" type="radio" value="$(this).closest("li")"> </label>
+          </form>
+      </div>
+
+      <div class="correct">
+          <p>You got it right :)<br> You must have been studying!</p>
+          <button>Next Question</button>
+      </div>
+
+      <div class="wrong">
+          <p>Aww, you made a mistake :( The right answer is</p>
+          <button>Next Question</button>
+      </div>
+
+      <div class="score poor">
+          <p> Lets study some more and try again.</p>
+          <button>Start Over</button>
+        </div>
+      <div class="score ok">
+          <p>You did ok. Let's see if you can get all of them correct this time.</p>
+          <button>Start Over</button>
+      </div>
+      <div class="score great">
+          <p>Wow you have been studying! Wanna try again just for funnzies?</p>
+          <button>Start Over</button>
+      </div>
+
+    <script src="//code.jquery.min.js"></script>
+    <script type="text/javascript" src="quiz.js"></script>
+</body>
+</html>
