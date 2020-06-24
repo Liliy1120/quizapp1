@@ -3,6 +3,10 @@ body {
     background-color: lightgrey;
 }
 
+.hide {
+    display: none;
+}
+
 #start-b {
     margin-bottom: 20px;
 }
