@@ -88,5 +88,4 @@ const STORE = {
         ],
         answer: "To establish information hierarachy"
       },
-
     ]};

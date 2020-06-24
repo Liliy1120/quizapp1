@@ -10,99 +10,8 @@
 // be moved onto the next question (or interact with an element to move on).
 // Users should be shown their overall score at the end of the quiz. In other words, how many questions they got right out of the total questions asked.
 // Users should be able to start a new quiz.
-let questionNumber = 0;
-const STORE = {
-    questions: [
-        //1
-      {
-        question: "What are heading elements for?",
-        options: [
-          "It tells where the head of a document is", 
-          "For styling purposes", 
-          "To establish information hierarachy", 
-          "To establish authority"
-        ],
-        answer: "To establish information hierarachy"
-      },
-        //2
-      {
-        question: "How do you comment code in html?",
-        options: [
-          "<!--comment text-->", 
-          'comment --> "this is a comment"', 
-          "To establish information hierarachy", 
-          "To establish authority"
-        ],
-        answer: "<!--comment text-->"
-      },
-        //3
-      {
-        question: "What are heading elements for?",
-        options: [
-          "It tells where the head of a document is", 
-          "For styling purposes", 
-          "To establish information hierarachy", 
-          "To establish authority"
-        ],
-        answer: "To establish information hierarachy"
-      },
-        //4
-      {
-        question: "What are heading elements for?",
-        options: [
-          "It tells where the head of a document is", 
-          "For styling purposes", 
-          "To establish information hierarachy", 
-          "To establish authority"
-        ],
-        answer: "To establish information hierarachy"
-      },
-        //5
-      {
-        question: "What are heading elements for?",
-        options: [
-          "It tells where the head of a document is", 
-          "For styling purposes", 
-          "To establish information hierarachy", 
-          "To establish authority"
-        ],
-        answer: "To establish information hierarachy"
-      },
-        //6
-      {
-        question: "What are heading elements for?",
-        options: [
-          "It tells where the head of a document is", 
-          "For styling purposes", 
-          "To establish information hierarachy", 
-          "To establish authority"
-        ],
-        answer: "To establish information hierarachy"
-      },
-        //7
-      {
-        question: "What are heading elements for?",
-        options: [
-          "It tells where the head of a document is", 
-          "For styling purposes", 
-          "To establish information hierarachy", 
-          "To establish authority"
-        ],
-        answer: "To establish information hierarachy"
-      },
-        //8
-      {
-        question: "What are heading elements for?",
-        options: [
-          "It tells where the head of a document is", 
-          "For styling purposes", 
-          "To establish information hierarachy", 
-          "To establish authority"
-        ],
-        answer: "To establish information hierarachy"
-      },
 
-    ]};
+let questionNumber = 0;
 
 // The starting screen should have a button that users can click to start the quiz.
     function startQuiz() {
@@ -124,11 +33,33 @@ const STORE = {
     function updateQuestionNumber(){
         $('.check').on('click', function(){
             $('.qnum').text(questionNumber + 1);
+        });
+    };
+
+//check the submitted answer 
+    function checkAnswer() {
+        $('.check').on('click',function(event){
+            event.preventDefault();
+            let selectedAnswer = $('input:checked');
+            let selectAns = selectedAnswer.val();
+            //let correctAnsw = STORE.[questionNumber].answer;
+
+            if (selectedAnswer === correctAnsw) {
+                correctAns();
+            } else {
+                wrongAns();
+            }
         })
     }
 
-//check the submitted answer 
-//function correct answer
+    function correctAns(){
+        $('correct').removeClass('hide');
+    }
+
+    function wrongAns(){
+        $('wrong').removeClass('hide');
+    }
+
 
 
 //render next question 
@@ -143,6 +74,7 @@ const STORE = {
     function initQuiz() {
         startQuiz();
         scoreBoard();
+        checkAnswer() 
     }
 
     $(initQuiz);
