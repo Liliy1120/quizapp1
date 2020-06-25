@@ -123,11 +123,13 @@ let score = 0;
             $('.initQues').addClass('hide');
             $('.rightWrong').addClass('hide');
             console.log('hideQuestion ran');
+            console.log(questionNumber);
         });
     };
 
 //make form template for next questions 
 function createForm(questionIndex) {
+    console.log('createForm ran');
     let formCreator = $(`<form>
       <fieldset>
         <legend>${STORE[questionIndex].question}</legend>
@@ -145,6 +147,7 @@ function createForm(questionIndex) {
     });
     $(`<button type="submit" class="submitButton button"> Submit</button > `).appendTo(fieldSet);
     return formCreator;
+
   };
 
 
@@ -155,7 +158,7 @@ function createForm(questionIndex) {
         } else {
           $('.question').hide();
           finalScore();
-          $('.questionNumber').text(10);
+          $('.qnum').text(10);
         }
       }
 
@@ -171,9 +174,8 @@ function createForm(questionIndex) {
 //update question number
     function updateQuestionNumber() {
         questionNumber++;
-        $('.questionNumber').text(questionNumber++);
+        $('.qnum').text(questionNumber++);
         console.log('updateQuestionNumber ran');
-        console.log(updateQuestionNumber);
     }
 
 //check the submitted answer 
@@ -188,10 +190,12 @@ function checkAnswer() {
 
         if (selectAns === correctAnsw) {
             correctAns();
-            console.log('correct ans ran');
+            updateScore()
+            console.log('correct ran');
         } else {
             wrongAns();
-            console.log('wrongAns ans ran');
+            updateScore()
+            console.log('wrongAns ran');
         }
         
     });
@@ -201,12 +205,21 @@ function correctAns(){
     $('.correct').removeClass('hide');
     $('.correct').html(`You got it right :)<br> You have been studying! <button>Next Question</button>`);
     $('.check').addClass('hide');
+    console.log(questionNumber);
 }
+//update score points
+function updateScore() {
+    score++;
+    $('.score').text(score);
+    $('.score').removeClass('hide');
+    console.log('updateScore ran')
+  }
 
 function wrongAns(){
     $('.wrong').removeClass('hide');
     $('.wrong').html(`Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}<button>Next Question</button>`);
     $('.check').addClass('hide');
+    console.log(questionNumber);
 }
 
 
@@ -217,9 +230,14 @@ function wrongAns(){
 
    
 function nextQuestion() {
-    $('.rightWrong').on('click', '.next-question',function(event){
+    $('.rightWrong').on('click', 'button',function(event){
       event.preventDefault();
       updateQuestionNumber();
+      updateScore();
+
+
+      console.log(score);
+      console.log('nextQuestion ran');
      });
  }
     
@@ -230,6 +248,8 @@ function nextQuestion() {
         checkAnswer();
         hideQuestion();
         renderQuestion();
+        nextQuestion();
+        console.log(questionNumber);
         
     }
 
