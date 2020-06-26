@@ -185,10 +185,12 @@ function checkAnswer() {
         console.log('checkAnswer ran');;
        
         let selectedAnswer = $('input:checked');
+        console.log(selectedAnswer);
         let selectAns = selectedAnswer.val();
+        console.log("--"+selectAns+"--");
         let correctAnsw = STORE[questionNumber].answer;
-
-        if (selectAns === correctAnsw) {
+        console.log("--"+correctAnsw+"--");
+        if (selectAns.trim() === correctAnsw) {
             correctAns();
             updateScore()
             console.log('correct ran');
