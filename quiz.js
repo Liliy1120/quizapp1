@@ -1,4 +1,95 @@
-'use strict';
+const STORE = [
+    //1
+  {
+    question: "What are heading elements for?",
+    options: [
+      "It tells where the head of a document is", 
+      "For styling purposes", 
+      "To establish information hierarachy", 
+      "To establish authority"
+    ],
+    answer: "To establish information hierarachy"
+  },
+    //2
+  {
+    question: "How do you comment code in html?",
+    options: [
+      "<!--comment text-->", 
+      `comment --> "this is a comment"`, 
+      "To establish information hierarachy", 
+      "To establish authority"
+    ],
+    answer: "<!--comment text-->"
+  },
+    //3
+  {
+    question: "What are heading elements for?",
+    options: [
+      "It tells where the head of a document is", 
+      "For styling purposes", 
+      "To establish information hierarachy", 
+      "To establish authority"
+    ],
+    answer: "To establish information hierarachy"
+  },
+    //4
+  {
+    question: "What are heading elements for?",
+    options: [
+      "It tells where the head of a document is", 
+      "For styling purposes", 
+      "To establish information hierarachy", 
+      "To establish authority"
+    ],
+    answer: "To establish information hierarachy"
+  },
+    //5
+  {
+    question: "What are heading elements for?",
+    options: [
+      "It tells where the head of a document is", 
+      "For styling purposes", 
+      "To establish information hierarachy", 
+      "To establish authority"
+    ],
+    answer: "To establish information hierarachy"
+  },
+    //6
+  {
+    question: "What are heading elements for?",
+    options: [
+      "It tells where the head of a document is", 
+      "For styling purposes", 
+      "To establish information hierarachy", 
+      "To establish authority"
+    ],
+    answer: "To establish information hierarachy"
+  },
+    //7
+  {
+    question: "What are heading elements for?",
+    options: [
+      "It tells where the head of a document is", 
+      "For styling purposes", 
+      "To establish information hierarachy", 
+      "To establish authority"
+    ],
+    answer: "To establish information hierarachy"
+  },
+    //8
+  {
+    question: "What are heading elements for?",
+    options: [
+      "It tells where the head of a document is", 
+      "For styling purposes", 
+      "To establish information hierarachy", 
+      "To establish authority"
+    ],
+    answer: "To establish information hierarachy"
+  },
+  ];
+  
+  'use strict';
 
 // Users should be prompted through a series of at least 5 multiple choice questions that they can answer.
 // Users should be asked questions 1 after the other.
@@ -15,14 +106,15 @@ let questionNumber = 0;
 let score = 0;
 
 // The starting screen should have a button that users can click to start the quiz.
-function startQuiz() {
+function startQuiz(questionNumber) {
     $('.start').on("click", function(){
          $('.js-startpage').addClass("hide")
         $('.question').removeClass("hide")
-        $('.qnum').text(1);
-        console.log('startQuiz ran');
-   
-    
+        $(.question).css('display', 'block')
+        questionNumber = 1
+        $('.qnum').text(questionNumber)
+        console.log('startQuiz ran')
+        renderQuestion(questionNumber -1)
     });
 };
 
@@ -39,23 +131,30 @@ function hideQuestion() {
 //make form template for next questions 
 function createForm(questionIndex) {
 console.log('createForm ran');
-let formCreator = $(`<form>
+checkAnswer(questionIndex);
+return`<form>
   <fieldset>
     <legend>${STORE[questionIndex].question}</legend>
   </fieldset>
-</form>`)
-
-let fieldSet = $(formCreator).find('fieldset');
-
-STORE[questionIndex].options.forEach(function (answerValue, answerIndex) {
-  $(`<label for="${answerIndex}">
-      <input class="radio" type="radio" id="${answerIndex}" value="${answerValue}" name="answer" required>
-      <span>${answerValue}</span>
+    <label for="1">
+      <input class="radio" type="radio" id="1" value="${STORE[questionIndex].options[0]}" name="answer" required>
+      <span>${STORE[questionIndex].options[0]}</span>
     </label>
-    `).appendTo(fieldSet);
-});
-$(`<button type="submit" class="submitButton button"> Submit</button > `).appendTo(fieldSet);
-return formCreator;
+    <label for="2">
+      <input class="radio" type="radio" id="2" value="${STORE[questionIndex].options[0]}" name="answer" required>
+      <span>${STORE[questionIndex].options[1]}</span>
+    </label>
+    <label for="3">
+      <input class="radio" type="radio" id="3" value="${STORE[questionIndex].options[0]}" name="answer" required>
+      <span>${STORE[questionIndex].options[2]}</span>
+    </label>
+    <label for="3">
+      <input class="radio" type="radio" id="4" value="${STORE[questionIndex].options[0]}" name="answer" required>
+      <span>${STORE[questionIndex].options[3]}</span>
+    </label>
+    <button type="submit" class="submitButton check button"> Submit</button >
+</form>`
+
 
 };
 
@@ -63,11 +162,12 @@ return formCreator;
 //and render next questions
 function renderQuestion() {
     if (questionNumber < STORE.length) {
-      return createForm(questionNumber);
+        console.log('yay')
+     $('.question').html(createForm(questionNumber));
     } else {
-      $('.question').hide();
-      finalScore();
-      $('.qnum').text(10);
+      $('.question').hide()
+      finalScore()
+      $('.qnum').text(10)
     }
   }
 
@@ -89,7 +189,7 @@ function updateQuestionNumber() {
 
 //check the submitted answer 
 function checkAnswer() {
-$('form').on('click', '.check', function(event){
+$('.submitButton').on('click', function(event){
     event.preventDefault();
     console.log('checkAnswer ran');;
    
@@ -131,6 +231,10 @@ $('.wrong').removeClass('hide');
 $('.wrong').html(`Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}<button>Next Question</button>`);
 $('.check').addClass('hide');
 console.log(questionNumber);
+}
+
+function finalScore() {
+    console.log('hi');
 }
 
 
