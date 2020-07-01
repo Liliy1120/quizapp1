@@ -131,30 +131,30 @@ function createForm(questionIndex) {
 console.log('createForm ran');
 //checkAnswer(questionIndex);
 if(questionIndex < STORE.length) {
-    return`<form id:'qForm'>
+    return`<form action="" method="post" id:'qForm'>
     <fieldset>
         <legend>${STORE[questionIndex].question}</legend>
         <label for="1">
-        <input class="radio" type="radio" id="1" value="${STORE[questionIndex].options[0]}" name="answer" required>
-        <span>${STORE[questionIndex].options[0]}</span>
+        <input class="radio container" type="radio" id="1" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <span class="checkmark">${STORE[questionIndex].options[0]}</span>
         </label>
         <label for="2">
-        <input class="radio" type="radio" id="2" value="${STORE[questionIndex].options[0]}" name="answer" required>
-        <span>${STORE[questionIndex].options[1]}</span>
+        <input class="radio container" type="radio" id="2" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <span class="checkmark">${STORE[questionIndex].options[1]}</span>
         </label>
         <label for="3">
-        <input class="radio" type="radio" id="3" value="${STORE[questionIndex].options[0]}" name="answer" required>
-        <span>${STORE[questionIndex].options[2]}</span>
+        <input class="radio container" type="radio" id="3" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <span class="checkmark">${STORE[questionIndex].options[2]}</span>
         </label>
         <label for="3">
-        <input class="radio" type="radio" id="4" value="${STORE[questionIndex].options[0]}" name="answer" required>
-        <span>${STORE[questionIndex].options[3]}</span>
+        <input class="radio containe" type="radio" id="4" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <span class="checkmark">${STORE[questionIndex].options[3]}</span>
         </label>
         <button type="submit" class="checkme"> Check Answer</button >
     </form>`;
     
     };
-    checkAnswer();
+    // checkAnswer();
 
 }
 
@@ -169,6 +169,7 @@ function renderQuestion() {
       finalScore()
       $('.qnum').text(10)
     }
+    checkAnswer();
   }
 
 
@@ -189,17 +190,17 @@ function updateQuestionNumber() {
 
 //check the submitted answer 
 function checkAnswer() {
-$('form').on('submit', function(e) {
-    e.preventDefault();
-    e.stopImmediatePropagation()
+$('form').submit(function(event){   
+    event.preventDefault()
     console.log('checkAnswer ran');
-   
+
     let selectedAnswer = $('input:checked');
     console.log(selectedAnswer);
     let selectAns = selectedAnswer.val();
     console.log("--"+selectAns+"--");
     let correctAnsw = STORE[questionNumber].answer;
     console.log("--"+correctAnsw+"--");
+    
     if (selectAns.trim() === correctAnsw) {
         correctAns();
         updateScore()
@@ -223,7 +224,7 @@ console.log(questionNumber);
 function updateScore() {
 score++;
 $('.score').text(score);
-$('.score').removeClass('hide');
+$('.board').removeClass('hide');
 console.log('updateScore ran')
 }
 
@@ -235,13 +236,13 @@ console.log(questionNumber);
 }
 
 function finalScore() {
-    console.log('hi');
-}
+    console.log('hi')
+};
 
 
 
-//render next question 
-//I want the index number to connect to the question number 
+// render next question 
+// I want the index number to connect to the question number 
 // so whatever question number is displayed i want it to match the index number
 
 
@@ -249,14 +250,13 @@ function nextQuestion() {
 $('.rightWrong').on('click',function(event){
   event.preventDefault();
   updateQuestionNumber();
-  updateScore();
+  //updateScore();
 
 
   console.log(score);
   console.log('nextQuestion ran');
  });
 }
-
 
 function initQuiz() {
     startQuiz();
@@ -266,7 +266,7 @@ function initQuiz() {
     renderQuestion();
     nextQuestion();
     console.log(questionNumber);
-    
 }
 
 $(initQuiz);
+   
