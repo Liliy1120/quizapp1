@@ -88,8 +88,6 @@ const STORE = [
     answer: "To establish information hierarachy"
   },
   ];
-  
-  'use strict';
 
 // Users should be prompted through a series of at least 5 multiple choice questions that they can answer.
 // Users should be asked questions 1 after the other.
@@ -110,13 +108,13 @@ function startQuiz(questionNumber) {
     $('.start').on("click", function(){
          $('.js-startpage').addClass("hide")
         $('.question').removeClass("hide")
-        $(.question).css('display', 'block')
-        questionNumber = 1
-        $('.qnum').text(questionNumber)
+        $('.question').css('display', 'block')
+        questionNumber = 1;
+        $('.qnum').text(questionNumber);
         console.log('startQuiz ran')
         renderQuestion(questionNumber -1)
     });
-};
+}
 
 //hide initial question
 function hideQuestion() {
@@ -126,43 +124,45 @@ function hideQuestion() {
         console.log('hideQuestion ran');
         console.log(questionNumber);
     });
-};
+}
 
 //make form template for next questions 
 function createForm(questionIndex) {
 console.log('createForm ran');
-checkAnswer(questionIndex);
-return`<form>
-  <fieldset>
-    <legend>${STORE[questionIndex].question}</legend>
-  </fieldset>
-    <label for="1">
-      <input class="radio" type="radio" id="1" value="${STORE[questionIndex].options[0]}" name="answer" required>
-      <span>${STORE[questionIndex].options[0]}</span>
-    </label>
-    <label for="2">
-      <input class="radio" type="radio" id="2" value="${STORE[questionIndex].options[0]}" name="answer" required>
-      <span>${STORE[questionIndex].options[1]}</span>
-    </label>
-    <label for="3">
-      <input class="radio" type="radio" id="3" value="${STORE[questionIndex].options[0]}" name="answer" required>
-      <span>${STORE[questionIndex].options[2]}</span>
-    </label>
-    <label for="3">
-      <input class="radio" type="radio" id="4" value="${STORE[questionIndex].options[0]}" name="answer" required>
-      <span>${STORE[questionIndex].options[3]}</span>
-    </label>
-    <button type="submit" class="submitButton check button"> Submit</button >
-</form>`
+//checkAnswer(questionIndex);
+if(questionIndex < STORE.length) {
+    return`<form id:'qForm'>
+    <fieldset>
+        <legend>${STORE[questionIndex].question}</legend>
+        <label for="1">
+        <input class="radio" type="radio" id="1" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <span>${STORE[questionIndex].options[0]}</span>
+        </label>
+        <label for="2">
+        <input class="radio" type="radio" id="2" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <span>${STORE[questionIndex].options[1]}</span>
+        </label>
+        <label for="3">
+        <input class="radio" type="radio" id="3" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <span>${STORE[questionIndex].options[2]}</span>
+        </label>
+        <label for="3">
+        <input class="radio" type="radio" id="4" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <span>${STORE[questionIndex].options[3]}</span>
+        </label>
+        <button type="submit" class="checkme"> Check Answer</button >
+    </form>`;
+    
+    };
+    checkAnswer();
 
-
-};
+}
 
 
 //and render next questions
 function renderQuestion() {
     if (questionNumber < STORE.length) {
-        console.log('yay')
+        console.log('renderQuestion ran')
      $('.question').html(createForm(questionNumber));
     } else {
       $('.question').hide()
@@ -189,9 +189,10 @@ function updateQuestionNumber() {
 
 //check the submitted answer 
 function checkAnswer() {
-$('.submitButton').on('click', function(event){
-    event.preventDefault();
-    console.log('checkAnswer ran');;
+$('form').on('submit', function(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation()
+    console.log('checkAnswer ran');
    
     let selectedAnswer = $('input:checked');
     console.log(selectedAnswer);
@@ -209,8 +210,8 @@ $('.submitButton').on('click', function(event){
         console.log('wrongAns ran');
     }
     
-});
-};
+  });
+}
 
 function correctAns(){
 $('.correct').removeClass('hide');
@@ -245,7 +246,7 @@ function finalScore() {
 
 
 function nextQuestion() {
-$('.rightWrong').on('click', 'button',function(event){
+$('.rightWrong').on('click',function(event){
   event.preventDefault();
   updateQuestionNumber();
   updateScore();
