@@ -14,8 +14,8 @@ const STORE = [
   {
     question: "How do you comment code in html?",
     options: [
-      "<!--comment text-->", 
-      `comment --> "this is a comment"`, 
+      "`<!--comment text-->"`, 
+      "`comment --> "this is a comment`", 
       "To establish information hierarachy", 
       "To establish authority"
     ],
@@ -108,7 +108,6 @@ function startQuiz(questionNumber) {
     $('.start').on("click", function(){
          $('.js-startpage').addClass("hide")
         $('.question').removeClass("hide")
-        $('.question').css('display', 'block')
         questionNumber = 1;
         $('.qnum').text(questionNumber);
         console.log('startQuiz ran')
@@ -117,14 +116,15 @@ function startQuiz(questionNumber) {
 }
 
 //hide initial question
-function hideQuestion() {
-    $('.rightWrong').on('click','button', function() {
-        $('.initQues').addClass('hide');
-        $('.rightWrong').addClass('hide');
-        console.log('hideQuestion ran');
-        console.log(questionNumber);
-    });
-}
+// function hideQuestion() {
+//     $('.rightWrong').on('click','button', function() {
+//         $('.question').addClass('hide');
+//         $('.rightWrong').addClass('hide');
+//         console.log('hideQuestion ran');
+//         console.log(questionNumber);
+//     });
+//     updateScore();
+// }
 
 //make form template for next questions 
 function createForm(questionIndex) {
@@ -139,15 +139,15 @@ if(questionIndex < STORE.length) {
         <span class="checkmark">${STORE[questionIndex].options[0]}</span>
         </label>
         <label for="2">
-        <input class="radio container" type="radio" id="2" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <input class="radio container" type="radio" id="2" value="${STORE[questionIndex].options[1]}" name="answer" required>
         <span class="checkmark">${STORE[questionIndex].options[1]}</span>
         </label>
         <label for="3">
-        <input class="radio container" type="radio" id="3" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <input class="radio container" type="radio" id="3" value="${STORE[questionIndex].options[2]}" name="answer" required>
         <span class="checkmark">${STORE[questionIndex].options[2]}</span>
         </label>
         <label for="3">
-        <input class="radio containe" type="radio" id="4" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <input class="radio containe" type="radio" id="4" value="${STORE[questionIndex].options[3]}" name="answer" required>
         <span class="checkmark">${STORE[questionIndex].options[3]}</span>
         </label>
         <button type="submit" class="checkme"> Check Answer</button >
@@ -184,7 +184,7 @@ function scoreBoard() {
 //update question number
 function updateQuestionNumber() {
     questionNumber++;
-    $('.qnum').text(questionNumber++);
+    $('.qnum').text(questionNumber);
     console.log('updateQuestionNumber ran');
 }
 
@@ -192,16 +192,10 @@ function updateQuestionNumber() {
 function checkAnswer() {
 $('form').submit(function(event){   
     event.preventDefault()
-    console.log('checkAnswer ran');
-
-    let selectedAnswer = $('input:checked');
-    console.log(selectedAnswer);
-    let selectAns = selectedAnswer.val();
-    console.log("--"+selectAns+"--");
-    let correctAnsw = STORE[questionNumber].answer;
-    console.log("--"+correctAnsw+"--");
+    let selectedAnswer = $("input:checked").val();
+    let correctAnsw = `${STORE[questionNumber].answer}`;
     
-    if (selectAns.trim() === correctAnsw) {
+    if (selectedAnswer === correctAnsw) {
         correctAns();
         updateScore()
         console.log('correct ran');
@@ -217,7 +211,7 @@ $('form').submit(function(event){
 function correctAns(){
 $('.correct').removeClass('hide');
 $('.correct').html(`You got it right :)<br> You have been studying! <button>Next Question</button>`);
-$('.check').addClass('hide');
+$('.question').addClass('hide');
 console.log(questionNumber);
 }
 //update score points
@@ -231,7 +225,7 @@ console.log('updateScore ran')
 function wrongAns(){
 $('.wrong').removeClass('hide');
 $('.wrong').html(`Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}<button>Next Question</button>`);
-$('.check').addClass('hide');
+$('.question').addClass('hide');
 console.log(questionNumber);
 }
 
@@ -248,9 +242,12 @@ function finalScore() {
 
 function nextQuestion() {
 $('.rightWrong').on('click',function(event){
-  event.preventDefault();
   updateQuestionNumber();
-  //updateScore();
+  $('.question').removeClass('hide');
+  renderQuestion();
+
+  
+
 
 
   console.log(score);
@@ -262,7 +259,7 @@ function initQuiz() {
     startQuiz();
     scoreBoard();
     checkAnswer();
-    hideQuestion();
+    //hideQuestion();
     renderQuestion();
     nextQuestion();
     console.log(questionNumber);
