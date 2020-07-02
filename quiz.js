@@ -283,7 +283,7 @@ function startOver() {
 
 function nextQuestion() {
 $('.rightWrong').on('click','.nextQ',function(event){
-    $('.rightWrong').hide();
+    //$('.rightWrong').hide();
     console.log('nextQuestion ran')
   updateQuestionNumber();
   renderQuestion();
