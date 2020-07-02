@@ -202,7 +202,7 @@ $('form').submit(function(event){
 
 //render correct answer and feed back
 function correctAns(){
-$('.correct').removeClass('hide')
+$('.correct').show();
 $('.correct').html(`You got it right :)<br> You have been studying! <button class='nextQ'>Next Question</button>`);
 $('.checkme').addClass('hide');
 
@@ -219,7 +219,7 @@ console.log('updateScore ran')
 
 //render wrong answer and feed back
 function wrongAns(){
-$('.wrong').removeClass('hide');
+$('.wrong').show();
 $('.wrong').html(`Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}<button class='nextQ'>Next Question</button>`);
 $('.checkme').addClass('hide');
 console.log(questionNumber);
@@ -283,7 +283,8 @@ function startOver() {
 
 function nextQuestion() {
 $('.rightWrong').on('click','.nextQ',function(event){
-    //$('.rightWrong').hide();
+    $('.correct').hide();
+    $('.wrong').hide();
     console.log('nextQuestion ran')
   updateQuestionNumber();
   renderQuestion();
