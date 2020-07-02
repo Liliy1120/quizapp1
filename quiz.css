@@ -1,6 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
     margin: 20px;
     background-color: lightgrey;
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.colourbox.com%2Fimage%2Fabstract-rainbow-binary-code-image-8326824&psig=AOvVaw0ngndFAk4a_qCf9wbUMAZS&ust=1593749287331000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjAsPbYreoCFQAAAAAdAAAAABAd');
+    width: 100%;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.start-page {
+  border: black dotted 5px;
+  width: 270px;
+  padding: 10px;
+  height: 500px;
+}
+
+.start-page>p {
+  font-family: fantasy;
+  font-size: 15px;
+  align-items: center;
+}
+ 
+main {
+  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.colourbox.com%2Fimage%2Fabstract-rainbow-binary-code-image-8326824&psig=AOvVaw0ngndFAk4a_qCf9wbUMAZS&ust=1593749287331000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjAsPbYreoCFQAAAAAdAAAAABAd');
+  width: 100%;
 }
 
 .hide {
