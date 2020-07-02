@@ -146,7 +146,6 @@ if(questionIndex < STORE.length) {
     </form>`;
     
     };
-    // checkAnswer();
 
 }
 
@@ -242,26 +241,40 @@ function finalScore() {
 function lowScore() {
     $('.poor').removeClass('hide')
     $('.finalScorePage').html(score)
-    StartOver()
+    startOver()
 }
 
 function mediumScore() {
     $('.okay').removeClass('hide')
     $('.finalScorePage').html(score)
-    StartOver()
+    startOver()
 }
 
 function highScore() {
     $('.great').removeClass('hide')
     $('.finalScorePage').html(score)
-    StartOver()
+    startOver()
 }
 
-function StartOver() {
-    $('.StartOver').on('click', function(){
-        history.go(0);
-    })
+function startOver() {
+    // $('.startOver').click(function(){
+    //     console.log('startOver ran')
+    //     event.preventDefault();
+    //     resetBoard();
+    //     $('.js-startpage').show();
+    //     $('.finalScore').addClass('hide');
+    // });
+    $('.startOver').click(function () {
+        location.reload(true); 
+    });
 }
+
+// function resetBoard(){
+//     score = 0;
+//     questionNumber = 0;
+//     $('.score').text(0);
+//     $('.questionNumber').text(0);
+// }
 
 // render next question 
 // I want the index number to connect to the question number 
@@ -287,6 +300,7 @@ function initQuiz() {
     checkAnswer();
     renderQuestion();
     nextQuestion();
+    startOver()
     console.log(questionNumber);
 }
 
