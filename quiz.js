@@ -12,18 +12,19 @@ const STORE = [
   },
     //2
   {
-    question: "How do you comment code in html?",
+    question: "Why is the <html> element called the root element?",
     options: [
-      "`<!--comment text-->"`, 
-      "`comment --> "this is a comment`", 
-      "To establish information hierarachy", 
-      "To establish authority"
+      "because it is the parent (or grandparent, or great-parent, etc.) of all other elements in the documents",
+      "because i am groot", 
+      "c", 
+      "d", 
+      "e"
     ],
-    answer: "<!--comment text-->"
+    answer: "because it is the parent (or grandparent, or great-parent, etc.) of all other elements in the documents"
   },
     //3
   {
-    question: "What are heading elements for?",
+    question: "What do psuedo-classes do?",
     options: [
       "It tells where the head of a document is", 
       "For styling purposes", 
@@ -34,7 +35,7 @@ const STORE = [
   },
     //4
   {
-    question: "What are heading elements for?",
+    question: "What is an example of a psuedo-element?",
     options: [
       "It tells where the head of a document is", 
       "For styling purposes", 
@@ -45,7 +46,7 @@ const STORE = [
   },
     //5
   {
-    question: "What are heading elements for?",
+    question: "What is a README file?",
     options: [
       "It tells where the head of a document is", 
       "For styling purposes", 
@@ -56,29 +57,29 @@ const STORE = [
   },
     //6
   {
-    question: "What are heading elements for?",
+    question: "What command should be used to look at a prior state of your repository?",
     options: [
       "It tells where the head of a document is", 
       "For styling purposes", 
       "To establish information hierarachy", 
       "To establish authority"
     ],
-    answer: "To establish information hierarachy"
+    answer: "git checkout"
   },
     //7
   {
-    question: "What are heading elements for?",
+    question: "What which value is true in JavaScript?",
     options: [
       "It tells where the head of a document is", 
       "For styling purposes", 
       "To establish information hierarachy", 
       "To establish authority"
     ],
-    answer: "To establish information hierarachy"
+    answer: "Boolean(-1)"
   },
     //8
   {
-    question: "What are heading elements for?",
+    question: "What does 'stict mode' do?",
     options: [
       "It tells where the head of a document is", 
       "For styling purposes", 
@@ -108,6 +109,7 @@ function startQuiz(questionNumber) {
     $('.start').on("click", function(){
          $('.js-startpage').addClass("hide")
         $('.question').removeClass("hide")
+        $('.board').removeClass("hide")
         questionNumber = 1;
         $('.qnum').text(questionNumber);
         console.log('startQuiz ran')
@@ -115,16 +117,6 @@ function startQuiz(questionNumber) {
     });
 }
 
-//hide initial question
-// function hideQuestion() {
-//     $('.rightWrong').on('click','button', function() {
-//         $('.question').addClass('hide');
-//         $('.rightWrong').addClass('hide');
-//         console.log('hideQuestion ran');
-//         console.log(questionNumber);
-//     });
-//     updateScore();
-// }
 
 //make form template for next questions 
 function createForm(questionIndex) {
@@ -170,6 +162,7 @@ function renderQuestion() {
       $('.qnum').text(10)
     }
     checkAnswer();
+    console.log('renderQuestion ran')
   }
 
 
@@ -183,8 +176,8 @@ function scoreBoard() {
 
 //update question number
 function updateQuestionNumber() {
-    questionNumber++;
-    $('.qnum').text(questionNumber);
+    questionNumber++
+    $('.qnum').text(questionNumber+1);
     console.log('updateQuestionNumber ran');
 }
 
@@ -201,17 +194,22 @@ $('form').submit(function(event){
         console.log('correct ran');
     } else {
         wrongAns();
-        updateScore()
         console.log('wrongAns ran');
     }
     
   });
 }
 
+//render correct answer and feed back
 function correctAns(){
 $('.correct').removeClass('hide');
-$('.correct').html(`You got it right :)<br> You have been studying! <button>Next Question</button>`);
-$('.question').addClass('hide');
+$('.correct').html(`You got it right :)<br> You have been studying! <button class='nextQ'>Next Question</button>`);
+$('.checkme').addClass('hide');
+
+$('.nextQ').on('click', function(){
+    $('.rightWrong').addClass('hide')
+    renderQuestion()
+})
 console.log(questionNumber);
 }
 //update score points
@@ -222,12 +220,18 @@ $('.board').removeClass('hide');
 console.log('updateScore ran')
 }
 
+
+//render wrong answer and feed back
 function wrongAns(){
 $('.wrong').removeClass('hide');
-$('.wrong').html(`Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}<button>Next Question</button>`);
-$('.question').addClass('hide');
+$('.wrong').html(`Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}<button class='nextQ'>Next Question</button>`);
+$('.checkme').addClass('hide');
 console.log(questionNumber);
 }
+$('.nextQ').on('click', function(){
+    $('.rightWrong').addClass('hide')
+    renderQuestion()
+})
 
 function finalScore() {
     console.log('hi')
@@ -240,28 +244,25 @@ function finalScore() {
 // so whatever question number is displayed i want it to match the index number
 
 
-function nextQuestion() {
-$('.rightWrong').on('click',function(event){
-  updateQuestionNumber();
-  $('.question').removeClass('hide');
-  renderQuestion();
-
+// function nextQuestion() {
+// $('.rightWrong').click(function(event){
+//     $('.rightWrong').addClass('hide');
+//   updateQuestionNumber();
+//   renderQuestion();
   
 
+//   console.log(score);
+//   console.log('nextQuestion ran');
+//  });
+// }
 
-
-  console.log(score);
-  console.log('nextQuestion ran');
- });
-}
 
 function initQuiz() {
     startQuiz();
     scoreBoard();
     checkAnswer();
-    //hideQuestion();
     renderQuestion();
-    nextQuestion();
+    //nextQuestion();
     console.log(questionNumber);
 }
 
