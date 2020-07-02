@@ -158,8 +158,9 @@ function renderQuestion() {
      $('.question').html(createForm(questionNumber));
     } else {
       $('.question').hide()
-      finalScore()
-      $('.qnum').text(10)
+      $('.board').hide()
+      $('.rightWrong').hide()
+      finalScore();
     }
     checkAnswer();
     console.log('renderQuestion ran')
@@ -206,10 +207,6 @@ $('.correct').removeClass('hide');
 $('.correct').html(`You got it right :)<br> You have been studying! <button class='nextQ'>Next Question</button>`);
 $('.checkme').addClass('hide');
 
-$('.nextQ').on('click', function(){
-    $('.rightWrong').addClass('hide')
-    renderQuestion()
-})
 console.log(questionNumber);
 }
 //update score points
@@ -228,33 +225,60 @@ $('.wrong').html(`Aww, you made a mistake The correct answer is:  ${STORE[questi
 $('.checkme').addClass('hide');
 console.log(questionNumber);
 }
-$('.nextQ').on('click', function(){
-    $('.rightWrong').addClass('hide')
-    renderQuestion()
-})
 
+//final Score
 function finalScore() {
-    console.log('hi')
+    let score = $('score').val;
+    console.log(score);
+    if (score >= 4){
+        lowScore();
+    } else if (score === 5||6) {
+        mediumScore();
+    } else {
+        highScore();
+    }
 };
 
+function lowScore() {
+    $('.poor').removeClass('hide')
+    $('.finalScorePage').html(score)
+    StartOver()
+}
 
+function mediumScore() {
+    $('.okay').removeClass('hide')
+    $('.finalScorePage').html(score)
+    StartOver()
+}
+
+function highScore() {
+    $('.great').removeClass('hide')
+    $('.finalScorePage').html(score)
+    StartOver()
+}
+
+function StartOver() {
+    $('.StartOver').on('click', function(){
+        history.go(0);
+    })
+}
 
 // render next question 
 // I want the index number to connect to the question number 
 // so whatever question number is displayed i want it to match the index number
 
 
-// function nextQuestion() {
-// $('.rightWrong').click(function(event){
-//     $('.rightWrong').addClass('hide');
-//   updateQuestionNumber();
-//   renderQuestion();
+function nextQuestion() {
+$('.rightWrong').click(function(event){
+    //$('.rightWrong').addClass('hide');
+  updateQuestionNumber();
+  renderQuestion();
   
 
-//   console.log(score);
-//   console.log('nextQuestion ran');
-//  });
-// }
+  console.log(score);
+  console.log('nextQuestion ran');
+ });
+}
 
 
 function initQuiz() {
@@ -262,7 +286,7 @@ function initQuiz() {
     scoreBoard();
     checkAnswer();
     renderQuestion();
-    //nextQuestion();
+    nextQuestion();
     console.log(questionNumber);
 }
 
