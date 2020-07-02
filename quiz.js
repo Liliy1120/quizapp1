@@ -107,7 +107,7 @@ let score = 0;
 // The starting screen should have a button that users can click to start the quiz.
 function startQuiz(questionNumber) {
     $('.start').on("click", function(){
-         $('.js-startpage').addClass("hide")
+         $('.js-startpage').hide();
         $('.question').removeClass("hide")
         $('.board').removeClass("hide")
         questionNumber = 1;
@@ -202,7 +202,7 @@ $('form').submit(function(event){
 
 //render correct answer and feed back
 function correctAns(){
-$('.correct').removeClass('hide');
+$('.correct').removeClass('hide')
 $('.correct').html(`You got it right :)<br> You have been studying! <button class='nextQ'>Next Question</button>`);
 $('.checkme').addClass('hide');
 
@@ -282,8 +282,9 @@ function startOver() {
 
 
 function nextQuestion() {
-$('.rightWrong').click(function(event){
-    //$('.rightWrong').addClass('hide');
+$('.rightWrong').on('click','.nextQ',function(event){
+    $('.rightWrong').hide();
+    console.log('nextQuestion ran')
   updateQuestionNumber();
   renderQuestion();
   

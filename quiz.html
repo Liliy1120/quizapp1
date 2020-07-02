@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
@@ -16,9 +17,11 @@
         </div>
       </header>
       <div class="js-startpage start-page">
-          <h1>Welcome to the best quiz ever!!</h1>
-          <p>Review some web development stuff</p>
-          <button class="start">Start this awesome quiz!</button>
+          <div class='square'>
+              <h1>Welcome to My Quiz App</h1>
+            <p>Ready to Review Some web-development Info?</p>
+            <button class="start">Start This Awesome Quiz!</button>
+        </div>
       </div>
       <div class="question hide">
       </div>
@@ -34,16 +37,16 @@
             <div class="poor hide">
                 <p> Lets study some more and try again.</p>
                 <button class='startOver'type='button'>Start Over</button>
-                <p>You got <span class='finalScorePage'>0 </span>out of 8!</p>
+                <p>You got <span class='finalScorePage'>0 </span> out of 8!</p>
             </div>
             <div class="okay hide">
                 <p>You did ok. Let's see if you can get all of them correct this time.</p>
-                <p>You got <span class='finalScorePage'>0 </span>out of 8!</p>
+                <p>You got <span class='finalScorePage'>0 </span> out of 8!</p>
                 <button class='startOver'type='button'>Start Over</button>
             </div>
             <div class="great hide">
                 <p>Wow you have been studying! Wanna try again just for funnzies?</p>
-                <p>You got <span class='finalScorePage'>0 </span>out of 8!</p>
+                <p>You got <span class='finalScorePage'>0 </span> out of 8!</p>
                 <button class='startOver' type='button'>Start Over</button>
             </div>
     </div>
