@@ -125,7 +125,7 @@ console.log('createForm ran');
 if(questionIndex < STORE.length) {
     return`<form action="" method="post" id:'qForm'>
     <fieldset>
-        <legend>${STORE[questionIndex].question}</legend>
+        <legend class='formQ'>${STORE[questionIndex].question}</legend>
         <label for="1">
         <input class="radio container" type="radio" id="1" value="${STORE[questionIndex].options[0]}" name="answer" required>
         <span class="checkmark">${STORE[questionIndex].options[0]}</span>
