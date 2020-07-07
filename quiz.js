@@ -15,10 +15,9 @@ const STORE = [
     question: "Why is the <html> element called the root element?",
     options: [
       "because it is the parent (or grandparent, or great-parent, etc.) of all other elements in the documents",
-      "because i am groot", 
-      "c", 
-      "d", 
-      "e"
+      "because I am groot", 
+      "because the code is written in an index.html file", 
+      "because it tells the file which language the file is written in" 
     ],
     answer: "because it is the parent (or grandparent, or great-parent, etc.) of all other elements in the documents"
   },
@@ -26,67 +25,67 @@ const STORE = [
   {
     question: "What do psuedo-classes do?",
     options: [
-      "It tells where the head of a document is", 
-      "For styling purposes", 
-      "To establish information hierarachy", 
-      "To establish authority"
+      "They target specific states of the document such as user hovering over or clicking on an element", 
+      "A notation resembling a simplified programming language, used in program design.", 
+      "Is a keyword added to a selector that lets you style a specific part of the selected element(s).", 
+      "Element with the symbol P and atomic number 15"
     ],
-    answer: "To establish information hierarachy"
+    answer: "They target specific states of the document such as user hovering over or clicking on an element"
   },
     //4
   {
     question: "What is an example of a psuedo-element?",
     options: [
-      "It tells where the head of a document is", 
-      "For styling purposes", 
-      "To establish information hierarachy", 
-      "To establish authority"
+      "This elemental system involves four primary elements: water, earth, fire, and air. Only the avatar can master all four elements, whereas regular individuals may be able to master one or none of the bending arts", 
+      "a:hover", 
+      "p::first-letter", 
+      "is a used to style specified parts of an element"
     ],
-    answer: "To establish information hierarachy"
+    answer: "p::first-letter"
   },
     //5
   {
     question: "What is a README file?",
     options: [
-      "It tells where the head of a document is", 
-      "For styling purposes", 
-      "To establish information hierarachy", 
-      "To establish authority"
+      "A README is a text file that introduces and explains a project. It contains information that is commonly required to understand what the project is about", 
+      "It reads the whole code in simple language and a summary about the programmer and their qualifications", 
+      "It is hundreds of wonderful short stories for programmers", 
+      "It is actually a beginners guide to the universe of files"
     ],
-    answer: "To establish information hierarachy"
+    answer: "A README is a text file that introduces and explains a project. It contains information that is commonly required to understand what the project is about"
   },
     //6
   {
     question: "What command should be used to look at a prior state of your repository?",
     options: [
-      "It tells where the head of a document is", 
-      "For styling purposes", 
-      "To establish information hierarachy", 
-      "To establish authority"
+      "git undo", 
+      "git Great Scott!", 
+      "git ctrl Z", 
+      "git checkout"
     ],
     answer: "git checkout"
   },
     //7
   {
-    question: "What which value is true in JavaScript?",
+    question: "Which value is true in JavaScript?",
     options: [
-      "It tells where the head of a document is", 
-      "For styling purposes", 
-      "To establish information hierarachy", 
-      "To establish authority"
+      "Boolean(false)", 
+      "Boolean(null)", 
+      "Boolean('false')", 
+      "Boolean(0)"
     ],
-    answer: "Boolean(-1)"
+    answer: "Boolean('false')"
   },
     //8
   {
     question: "What does 'stict mode' do?",
     options: [
-      "It tells where the head of a document is", 
-      "For styling purposes", 
-      "To establish information hierarachy", 
-      "To establish authority"
+      "It makes it so when anytime a variable is declared without the let or const keyword, an error pops up making it easier to avoid global variables ", 
+      "actually... it doesnt even go here", 
+      "It makes it so you have to comment your code", 
+      "it deletes all global variables"
     ],
-    answer: "To establish information hierarachy"
+    answer: "It makes it so when anytime a variable is declared without the let or const keyword, an error pops up making it easier to avoid global variables "
   },
   ];
 
