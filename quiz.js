@@ -259,10 +259,9 @@ function highScore() {
 function startOver() {
     // $('.startOver').click(function(){
     //     console.log('startOver ran')
-    //     event.preventDefault();
+    //     //event.preventDefault();
     //     resetBoard();
-    //     $('.js-startpage').show();
-    //     $('.finalScore').addClass('hide');
+
     // });
     $('.startOver').click(function () {
         location.reload(true); 
@@ -274,6 +273,9 @@ function startOver() {
 //     questionNumber = 0;
 //     $('.score').text(0);
 //     $('.questionNumber').text(0);
+//      startQuiz();
+//         $('.js-startpage').show();
+//         $('.finalScore').addClass('hide');
 // }
 
 // render next question 
