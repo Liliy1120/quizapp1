@@ -21,22 +21,17 @@ h1 {
   text-decoration: underline overline rgb(65, 34, 52);
 }
 
-.formQ {
-  text-decoration: underline overline rgb(65, 34, 52);
-  font-family: 'Megrim', cursive;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.411);
-  width: 250px;
-}
+
 
 .start-page {
-  width:300px;
+  width: 350px;
   height: 700px;
   padding-top: 5px;
   margin: auto 10px auto 10px;
   text-align: center;
   background-image: url(images/background.jpg);
   background-size: cover;
+  padding-right:-10px;
 }
 
 
@@ -66,57 +61,65 @@ p {
   font-size: 20px;
 }
 
-.checkme {
-  box-shadow: 3px 4px 0px 0px rgb(156, 56, 72);
-  background-color:transparent;
-  border-radius:15px;
-  border:1px solid rgb(109, 70, 107);
-  display:inline-block;
-  cursor:pointer;
-  color:  rgb(207, 187, 210);
-  font-weight:400;
-  font-size:17px;
-  text-decoration:none;
-  margin: auto; 
-  margin-top: 50px;
-  font-size: 14px;
-}
+
 
 .board {
   box-shadow: 3px 4px 0px 0px rgb(156, 56, 72);
   background-color:transparent;
   border:1px solid rgb(109, 70, 107);
   color:  rgb(207, 187, 210);
-  font-weight:400;
-  font-size:17px;
-  text-decoration:none;
+  font-size:20px;
   margin-bottom: 20px; 
-  font-size: 14px;
   width: 325px;
   display: flex;
   justify-items: center;
   align-items: center;
 }
-  
 
 
 form {
   position: relative;
-  width: 90%;
   margin: auto;
   display: flex;
   justify-content: center;
   padding-top:225px;
-  height: 400px;
-  width: 300px;
+  height: 500px;
+  width: 375px;
   word-break: break-word;
   color: black;
-  font-size: 10px;
+  font-size: 15px;
+}
+
+.formQ {
+  text-decoration: underline overline rgb(65, 34, 52);
+  font-family: 'Megrim', cursive;
+  font-size: 25px;
+  background-color: rgba(255, 255, 255, 0.411);
+  width: 325px;
 }
 
 fieldset {
   border: 0;
   background-color: rgba(255,255,255, .6);
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  opacity: 0;
+  /*cursor: pointer;*/
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.radiobtn {
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 40px;
+  border-radius: 50%;
+  color: rgb(65, 34, 52);
+  margin-top: 15px;
 }
 
 
@@ -129,8 +132,24 @@ fieldset {
   margin-left: -20px;
 }
 
+.checkme {
+  box-shadow: 3px 4px 0px 0px rgb(156, 56, 72);
+  background-color:transparent;
+  border-radius:15px;
+  border:1px solid rgb(109, 70, 107);
+  display:inline-block;
+  cursor:pointer;
+  color:  rgb(87, 52, 80);
+  font-weight:400;
+  font-size:17px;
+  text-decoration:none;
+  margin: auto; 
+  margin-top: 50px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
 
-  
  
 main {
   height: 400px;
@@ -141,9 +160,40 @@ main {
     display: none;
 }
 
+.correct, .wrong {
+  height: 200px;
+  text-align: center;
+  color:rgb(109, 70, 107);
+}
+
+
+.wrong {
+  padding-top: 15px;
+  font-size: 20px;
+}
+
 .correct {
-    background-image: url("https://d1yn1kh78jj1rr.cloudfront.net/image/preview/rDtN98Qoishumwih/graphicstock-laptop-with-blank-screen-on-table_ruBgYijPxse_SB_PM.jpg");
-} 
+  padding-top: 100px;
+  font-size: 30px;
+}
+
+
+.nextQ {
+  box-shadow: 3px 4px 0px 0px rgb(234, 215, 215);
+  background-color:transparent;
+  border-radius:15px;
+  border:1px solid rgb(109, 70, 107);
+  display:inline-block;
+  cursor:pointer;
+  color:  rgb(109, 70, 107);
+  text-decoration:none;
+  margin: auto; 
+  display:flex;
+  justify-content: center;
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  margin-top: 15px;
+  font-size: 20px;
+}
 
 #start-b {
     margin-bottom: 20px;
@@ -167,32 +217,34 @@ header {
   }
 
   label {
-      display: block;
+    display: block;
   }
 
   #questions {
       margin-bottom: 20px;
   }
 
-   
-  
-/* Hide the browser's default radio button */
-.container input {
-  opacity: 0;
-  /*cursor: pointer;*/
-  height: 0;
-  width: 0;
-}
+  .finalscore {
+    text-align: center;
+  }
 
-/* Create a custom radio button */
-.radiobtn {
-  top: 0;
-  left: 0;
-  height: 15px;
-  width: 40px;
-  border-radius: 50%;
-  color: rgb(65, 34, 52);
-}
+  .startOver {
+    box-shadow: 3px 4px 0px 0px rgb(234, 215, 215);
+    background-color:transparent;
+    border-radius:15px;
+    border:1px solid rgb(109, 70, 107);
+    display:inline-block;
+    cursor:pointer;
+    color:  rgb(109, 70, 107);
+    text-decoration:none;
+    margin: auto; 
+    display:flex;
+    justify-content: center;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+   
 
   
   @media only screen and (min-width: 768px) {
