@@ -122,23 +122,24 @@ function createForm(questionIndex) {
 console.log('createForm ran');
 //checkAnswer(questionIndex);
 if(questionIndex < STORE.length) {
-    return`<form action="" method="post" id:'qForm'>
+    return`
+    <form action="" method="post" id:'qForm'>
     <fieldset>
         <legend class='formQ'>${STORE[questionIndex].question}</legend>
         <label for="1">
-        <input class="radio container" type="radio" id="1" value="${STORE[questionIndex].options[0]}" name="answer" required>
+        <input class="radio container radiobtn" type="radio" id="1" value="${STORE[questionIndex].options[0]}" name="answer" required>
         <span class="checkmark">${STORE[questionIndex].options[0]}</span>
         </label>
         <label for="2">
-        <input class="radio container" type="radio" id="2" value="${STORE[questionIndex].options[1]}" name="answer" required>
+        <input class="radio container radiobtn" type="radio" id="2" value="${STORE[questionIndex].options[1]}" name="answer" required>
         <span class="checkmark">${STORE[questionIndex].options[1]}</span>
         </label>
         <label for="3">
-        <input class="radio container" type="radio" id="3" value="${STORE[questionIndex].options[2]}" name="answer" required>
+        <input class="radio container radiobtn" type="radio" id="3" value="${STORE[questionIndex].options[2]}" name="answer" required>
         <span class="checkmark">${STORE[questionIndex].options[2]}</span>
         </label>
         <label for="3">
-        <input class="radio containe" type="radio" id="4" value="${STORE[questionIndex].options[3]}" name="answer" required>
+        <input class="radio container radiobtn" type="radio" id="4" value="${STORE[questionIndex].options[3]}" name="answer" required>
         <span class="checkmark">${STORE[questionIndex].options[3]}</span>
         </label>
         <button type="submit" class="checkme"> Check Answer</button >
