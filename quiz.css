@@ -10,6 +10,8 @@ body {
     font-family: 'Fira Sans', sans-serif;
 }
 
+
+
 h1 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 60px;
@@ -25,7 +27,7 @@ h1 {
   height: 625px;
   margin: auto 10px auto 10px;
   text-align: center;
-  background-image: url(background.jpg);
+  background-image: url(images/background.jpg);
   background-size: cover;
 }
 
@@ -70,7 +72,7 @@ p {
   text-decoration:none;
   margin: auto; 
   margin-top: 50px;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .board {
@@ -82,7 +84,7 @@ p {
   font-size:17px;
   text-decoration:none;
   margin-bottom: 20px; 
-  font-size: 10px;
+  font-size: 14px;
 
 }
   
@@ -95,25 +97,28 @@ form {
   display: flex;
   justify-content: center;
   padding-top:225px;
-  height: 800px;
+  height: 400px;
   width: 300px;
   word-break: break-word;
   color: black;
   font-size: 10px;
 }
 
+fieldset {
+  border: 0;
+  background-color: rgba(255,255,255, .6);
+}
+
 
 .question {
-  background-image: url(background.jpg);
+  background-image: url(images/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 700px;
   width: 100%;
 }
 
-fieldset { 
-  border:0px; 
-}
+
   
  
 main {

@@ -205,6 +205,7 @@ function correctAns(){
 $('.correct').show();
 $('.correct').html(`You got it right :)<br> You have been studying! <button class='nextQ'>Next Question</button>`);
 $('.checkme').addClass('hide');
+$('.question').hide();
 
 console.log(questionNumber);
 }
@@ -222,6 +223,7 @@ function wrongAns(){
 $('.wrong').show();
 $('.wrong').html(`Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}<button class='nextQ'>Next Question</button>`);
 $('.checkme').addClass('hide');
+$('.question').hide();
 console.log(questionNumber);
 }
 
@@ -287,6 +289,7 @@ function nextQuestion() {
 $('.rightWrong').on('click','.nextQ',function(event){
     $('.correct').hide();
     $('.wrong').hide();
+    $('.question').show();
     console.log('nextQuestion ran')
   updateQuestionNumber();
   renderQuestion();
