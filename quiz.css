@@ -18,13 +18,21 @@ h1 {
   color: rgb(65, 34, 52);
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
   margin-top: 150px;
-  text-decoration: underline overline;
+  text-decoration: underline overline rgb(65, 34, 52);
+}
+
+.formQ {
+  text-decoration: underline overline rgb(65, 34, 52);
+  font-family: 'Megrim', cursive;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.411);
+  width: 250px;
 }
 
 .start-page {
-  width: 90%;
-  padding: 10px;
-  height: 625px;
+  width:300px;
+  height: 700px;
+  padding-top: 5px;
   margin: auto 10px auto 10px;
   text-align: center;
   background-image: url(images/background.jpg);
@@ -34,10 +42,11 @@ h1 {
 
 
 p {
-  font-size: 20px;
+  font-size: 30px;
   color: rgb(65, 34, 52);
   text-align: center;
-  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  margin-top: 40px;
 }
 
 .start {
@@ -53,8 +62,8 @@ p {
   display:flex;
   justify-content: center;
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
-  margin-top: 30px;
-  font-size: 14px;
+  margin-top: 80px;
+  font-size: 20px;
 }
 
 .checkme {
@@ -83,7 +92,10 @@ p {
   text-decoration:none;
   margin-bottom: 20px; 
   font-size: 14px;
-
+  width: 325px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
   
 
@@ -111,16 +123,18 @@ fieldset {
 .question {
   background-image: url(images/background.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   height: 700px;
-  width: 100%;
+  width: 400px;
+  margin-left: -20px;
 }
 
 
   
  
 main {
-
+  height: 400px;
+  width: 300px;
 }
 
 .hide {
@@ -177,6 +191,7 @@ header {
   height: 15px;
   width: 40px;
   border-radius: 50%;
+  color: rgb(65, 34, 52);
 }
 
   
