@@ -1,24 +1,24 @@
 * {
   box-sizing: border-box;
-  cursor:url("https://img.icons8.com/carbon-copy/25/000000/cursor.png"), auto;
 }
 
 body {
     margin: 20px;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Megrim', cursive;
 }
 
 
 
 h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 60px;
+  font-family: 'Megrim', cursive;
+  font-size: 55px;
   text-align: center;
   color: rgb(65, 34, 52);
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
   margin-top: 150px;
+  text-decoration: underline overline;
 }
 
 .start-page {
@@ -34,8 +34,8 @@ h1 {
 
 
 p {
-  font-size: 15px;
-  color: rgb(180, 159, 204);
+  font-size: 20px;
+  color: rgb(65, 34, 52);
   text-align: center;
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff
 }
@@ -48,15 +48,13 @@ p {
   display:inline-block;
   cursor:pointer;
   color:  rgb(109, 70, 107);
-  font-weight:400;
-  font-size:17px;
   text-decoration:none;
   margin: auto; 
   display:flex;
   justify-content: center;
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .checkme {
