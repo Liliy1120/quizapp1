@@ -68,12 +68,14 @@ p {
   background-color:transparent;
   border:1px solid rgb(109, 70, 107);
   color:  rgb(207, 187, 210);
-  font-size:20px;
+  font-size: 20px;
   margin-bottom: 20px; 
   width: 325px;
   display: flex;
   justify-items: center;
   align-items: center;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 
@@ -168,15 +170,20 @@ main {
 
 
 .wrong {
-  padding-top: 15px;
+  padding-top: 175px;
   font-size: 20px;
+  background-image: url(images/wrong.png);
+  background-size: 200px;
+  background-position: center;
+  background-color:rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  
 }
 
 .correct {
   padding-top: 100px;
   font-size: 30px;
 }
-
 
 .nextQ {
   box-shadow: 3px 4px 0px 0px rgb(234, 215, 215);
@@ -199,15 +206,12 @@ main {
     margin-bottom: 20px;
 }
 
-button {
-  background-color: whitesmoke;
-}
 
 header { 
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
      
-    border: 1px solid black;
+  border: 1px solid black;
   }
   
   header, #start, #question {
@@ -247,12 +251,62 @@ header {
    
 
   
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 760px) {
     header, #start, #questions { 
       width: 80%;
       margin: auto;
     }
-    h1 { font-size: 48px;}
+    h1 { 
+      font-size: 48px;
+    }
+    .start-page, .question {
+      width: 775px;
+      height: 1200px;
+      margin-left:-19px;
+      margin-top: -19px;
+    }
+
+    form {
+      padding-top: 300px;
+      font-size: 25px;
+      height: 700px;
+      width: 600px;
+    }
+
+    .formQ {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .board {
+      width: 700px;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      padding-top:150px;
+    }
+
+    .checkme {
+      font-size: 25px;
+      margin-top: 60px;
+    }
+
+    .correct, .wrong {
+      font-size: 45px;
+      text-align: center;
+      width: 770px;
+      margin-left:-30px;
+    }
+
+    main {
+      width: 600px;
+    }
+
+    .nextQ {
+      font-size: 30px;
+    }
   }
   
   @media only screen and (min-width: 1024px) {
