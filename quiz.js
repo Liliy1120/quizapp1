@@ -230,13 +230,13 @@ console.log(questionNumber);
 //final Score
 function finalScore() {
   let score = $('score').val;
-  console.log(score);
-  if (score >= 4){
-      lowScore();
+  console.log('finalscore ran');
+  if (score <= 4) {
+    lowScore();
   } else if (score === 5||6) {
-      mediumScore();
+    mediumScore(); 
   } else {
-      highScore();
+    highScore();
   }
 };
 
