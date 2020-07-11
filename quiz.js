@@ -243,9 +243,9 @@ function finalScore() {
     'Lets study some more and try again',
   ];
 
-  if (score < 4) {
+  if (score < 6) {
     array = poor;
-  } else if (score === 5||6) {
+  } else if (score === 6) {
     array = ok;
   } else {
     array = awesome;
