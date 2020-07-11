@@ -271,11 +271,8 @@ function startOver() {
     // //  startQuiz();
     // $('.js-startpage').show();
     // $('.finalScore').addClass('hide')
-});
+  });
 }
-  // $('.startOver').click(function () {
-  //     location.reload(true); 
-  // });
 
 // function resetBoard(){
 //     score = 0;
