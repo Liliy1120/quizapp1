@@ -13,7 +13,7 @@ body {
 
 h1 {
   font-family: 'Megrim', cursive;
-  font-size: 55px;
+  font-size: 35px;
   text-align: center;
   color: rgb(65, 34, 52);
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
@@ -24,7 +24,6 @@ h1 {
 
 
 .start-page {
-  width: 350px;
   height: 700px;
   padding-top: 5px;
   margin: auto 10px auto 10px;
@@ -37,7 +36,7 @@ h1 {
 
 
 p {
-  font-size: 30px;
+  font-size: 25px;
   color: rgb(65, 34, 52);
   text-align: center;
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
@@ -46,7 +45,7 @@ p {
 
 .start {
   box-shadow: 3px 4px 0px 0px rgb(234, 215, 215);
-  background-color:transparent;
+  background-color:#f5f3f4;
   border-radius:15px;
   border:1px solid rgb(109, 70, 107);
   display:inline-block;
@@ -70,21 +69,17 @@ p {
   color:  rgb(207, 187, 210);
   font-size: 20px;
   margin-bottom: 20px; 
-  width: 325px;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  padding-right: 10px;
-  padding-left: 10px;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
 form {
-  position: relative;
   margin: auto;
   display: flex;
   justify-content: center;
-  padding-top:150px;
+  align-items: center;
   height: 675px;
   width: 375px;
   word-break: break-word;
@@ -132,10 +127,8 @@ fieldset {
 .question {
   background-image: url(images/background.jpg);
   background-size: cover;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   height: 700px;
-  width: 400px;
-  margin-left: -20px;
 }
 
 .checkme {
@@ -158,8 +151,7 @@ fieldset {
 
  
 main {
-  height: 400px;
-  width: 300px;
+  height: 700px;
 }
 
 .hide {
@@ -213,168 +205,161 @@ main {
   font-size: 20px;
 }
 
+.finalscore {
+  background-color:transparent;
+  cursor:pointer;
+  color:  rgb(109, 70, 107);
+  text-align: center;
+  margin: auto; 
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
 
 
 header { 
   display: flex;
   justify-content: space-between;
-     
   border: 1px solid black;
-  }
+}
   
-  header, #start, #question {
-    width: 90%; 
-    margin: auto;
-  }
 
-  label {
-    display: block;
-  }
-
-  #questions {
-      margin-bottom: 20px;
-  }
+label {
+  display: block;
+}
 
 
 
-  .startOver {
-    box-shadow: 3px 4px 0px 0px rgb(234, 215, 215);
-    background-color:transparent;
-    border-radius:15px;
-    border:1px solid rgb(109, 70, 107);
-    display:inline-block;
-    cursor:pointer;
-    color:  rgb(109, 70, 107);
-    text-decoration:none;
-    margin: auto; 
-    display:flex;
-    justify-content: center;
-    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
-    margin-top: 15px;
-    font-size: 20px;
-  }
+.startOver {
+  box-shadow: 3px 4px 0px 0px rgb(234, 215, 215);
+  background-color:transparent;
+  border-radius:15px;
+  border:1px solid rgb(109, 70, 107);
+  display:inline-block;
+  cursor:pointer;
+  color:  rgb(109, 70, 107);
+  text-decoration:none;
+  margin: auto; 
+  display:flex;
+  justify-content: center;
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  margin-top: 15px;
+  font-size: 20px;
+}
    
 
   
-  @media only screen and (min-width: 760px) {
-    header, #start, #questions { 
-      width: 80%;
-      margin: auto;
-    }
-    h1 { 
-      font-size: 48px;
-    }
-    .start-page, .question {
-      width: 775px;
-      height: 1200px;
-      margin-left:-19px;
-      margin-top: -19px;
-    }
-
-    form {
-      padding-top: 300px;
-      font-size: 25px;
-      height: 800px;
-      width: 600px;
-    }
-
-    .formQ {
-      font-size: 30px;
-      text-align: center;
-      width: 600px;
-      padding-bottom: 20px;
-    }
-
-    .radio {
-      margin-bottom: 30px;
-    }
-
-    .board {
-      width: 700px;
-      font-size: 30px;
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      padding-top:150px;
-    }
-
-    .checkme {
-      font-size: 25px;
-      margin-top: 30px;
-    }
-
-    .correct, .wrong {
-      font-size: 45px;
-      text-align: center;
-      width: 770px;
-      margin-left:-30px;
-    }
-
-    main {
-      width: 600px;
-    }
-
-    .nextQ {
-      font-size: 30px;
-    }
-
-    .finalscore {
-      margin-left: 80px;
-      margin-top: 100px;
-    }
+@media only screen and (min-width: 760px) {
+  h1 { 
+    font-size: 48px;
   }
-  
-  @media only screen and (min-width: 1024px) {
-    header, #start, #questions { 
-      width: 60%;
-      margin: auto;
-    }
-    h1 { 
-      font-size: 70px;
-    }
-
-    p {
-      font-size: 40px;
-    }
-
-    .start-page, .question {
-      width: 1200px;
-      height: 825px;
-      margin-left:19px;
-      margin-top: 40px;
-    }
-
-    .start{
-      font-size: 30px;
-    }
-
-    .board {
-      width: 1000px;
-      font-size: 30px;
-      margin-bottom: 30px;
-      margin-left: 100px;
-    }
-
-    .question {
-      height: 900px;
-    }
-
-    .correct, .wrong {
-      width: 800px;
-      padding-left: 70px;
-      background-size: 300px;
-    }
-
-    .wrong {
-      margin-left: 125px;
-    }
-
-    .correct {
-      margin-left: 175px;
-    }
-
+  .start-page, .question {
+    height: 1200px;
+    margin-top: 19px;
   }
+
+  .start-page {
+    width: 775px;
+  }
+
+  form {
+    padding-top: 300px;
+    font-size: 25px;
+    height: 800px;
+    width: 600px;
+  }
+
+  .formQ {
+    font-size: 30px;
+    text-align: center;
+    width: 600px;
+    padding-bottom: 20px;
+  }
+
+  .radio {
+    margin-bottom: 30px;
+  }
+
+  .board {
+    width: 700px;
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    padding-top:150px;
+  }
+
+  .checkme {
+    font-size: 25px;
+    margin-top: 30px;
+  }
+
+  .correct, .wrong {
+    font-size: 45px;
+    text-align: center;
+    margin-left:-30px;
+  }
+
+
+  .nextQ {
+    font-size: 30px;
+  }
+
+  .finalscore {
+    margin-left: 80px;
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  h1 { 
+    font-size: 70px;
+  }
+
+  p {
+    font-size: 40px;
+  }
+
+  .start-page, .question {
+    width: 1200px;
+    height: 825px;
+    margin-left:19px;
+    margin-top: 40px;
+  }
+
+  .start{
+    font-size: 30px;
+  }
+
+  .board {
+    width: 1000px;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+  }
+
+  .question {
+    height: 900px;
+  }
+
+  .correct, .wrong {
+    padding-left: 70px;
+    background-size: 300px;
+  }
+
+  .wrong {
+    margin-left: 125px;
+  }
+
+  .correct {
+    margin-left: 175px;
+  }
+
+}
 
 
 
