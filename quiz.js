@@ -138,7 +138,7 @@ if(questionIndex < STORE.length) {
       <input class="radio container radiobtn" type="radio" id="3" value="${STORE[questionIndex].options[2]}" name="answer" required>
       <span class="checkmark">${STORE[questionIndex].options[2]}</span>
       </label>
-      <label for="3">
+      <label for="4">
       <input class="radio container radiobtn" type="radio" id="4" value="${STORE[questionIndex].options[3]}" name="answer" required>
       <span class="checkmark">${STORE[questionIndex].options[3]}</span>
       </label>
