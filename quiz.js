@@ -112,8 +112,8 @@ function startQuiz(questionNumber) {
       questionNumber = 1;
       $('.qnum').text(questionNumber);
       console.log('startQuiz ran')
-      renderQuestion(questionNumber -1)
-      //*************************************** */
+      renderQuestion(questionNumber -1);
+      $('.finalScore').hide();
   });
 }
 
@@ -260,24 +260,32 @@ function finalScore() {
 
 function startOver() {
   $(document).on('click', '.startOver', function(){
-    console.log('startOver ran')
-    //event.preventDefault();
-    resetBoard();
+    location.reload(true);
+    // console.log('startOver ran')
+    // event.preventDefault();
+    // // resetBoard();
+    // score = 0;
+    // questionNumber = 0;
+    // $('.score').text(0);
+    // $('.questionNumber').text(0);
+    // //  startQuiz();
+    // $('.js-startpage').show();
+    // $('.finalScore').addClass('hide')
 });
 }
   // $('.startOver').click(function () {
   //     location.reload(true); 
   // });
 
-function resetBoard(){
-    score = 0;
-    questionNumber = 0;
-    $('.score').text(0);
-    $('.questionNumber').text(0);
-     startQuiz();
-        $('.js-startpage').show();
-        $('.finalScore').addClass('hide');
-}
+// function resetBoard(){
+//     score = 0;
+//     questionNumber = 0;
+//     $('.score').text(0);
+//     $('.questionNumber').text(0);
+//      startQuiz();
+//     $('.js-startpage').show();
+//     $('.finalScore').addClass('hide');
+// }
 
 // render next question 
 // I want the index number to connect to the question number 
