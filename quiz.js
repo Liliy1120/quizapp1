@@ -227,35 +227,34 @@ $('.question').hide();
 console.log(questionNumber);
 }
 
-//final Score
+
 function finalScore() {
-  let score = $('score').val;
-  console.log('finalscore ran');
-  if (score <= 4) {
-    lowScore();
+  $('.finalscore').show();
+
+  const awesome = [
+    'Wow you have been studying! Wanna try again just for funnzies?',
+  ];
+
+  const ok = [
+    'You did pretty well! Lets see if you can get all of them correct this time',
+  ];
+
+  const poor = [
+    'Lets study some more and try again',
+  ];
+
+  if (score < 4) {
+    array = poor;
   } else if (score === 5||6) {
-    mediumScore(); 
+    array = ok;
   } else {
-    highScore();
+    array = awesome;
   }
-};
-
-function lowScore() {
-  $('.poor').removeClass('hide')
-  $('.finalScorePage').html(score)
-  startOver()
-}
-
-function mediumScore() {
-  $('.okay').removeClass('hide')
-  $('.finalScorePage').html(score)
-  startOver()
-}
-
-function highScore() {
-  $('.great').removeClass('hide')
-  $('.finalScorePage').html(score)
-  startOver()
+  return $('.finalscore').html(
+    `<h3>${array[0]}</h3>
+        <h3>Your score is ${score} / 10</h3>
+        <button class='startOver'type='button'>Start Over</button>`
+  );
 }
 
 function startOver() {
