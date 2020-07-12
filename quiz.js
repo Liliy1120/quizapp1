@@ -254,7 +254,7 @@ function finalScore() {
   return $('.finalscore').html(
     `<h3>${array[0]}</h3>
         <h3>Your score is ${score} / 8</h3>
-        <button class='startOver' type='button'>Start Over</button>`
+        <button class='startOver' type='button'>Try Again?</button>`
   );
 }
 

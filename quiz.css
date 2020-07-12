@@ -103,6 +103,7 @@ form {
 fieldset {
   border: 0;
   background-color: rgba(255,255,255, .6);
+  font-family: 'Raleway', sans-serif;
 }
 
 /* Hide the browser's default radio button */
@@ -354,11 +355,21 @@ label {
   }
 
   .wrong {
-    margin-left: 125px;
+    margin-left: 10px;
+    max-width: 1100px;
   }
 
   .correct {
-    margin-left: 175px;
+    max-width: 1100px;
+    margin-left: 30px;
+  }
+
+  .finalscore {
+    font-size: 40px;
+  }
+
+  .startOver {
+    font-size: 30px;
   }
 
 }
