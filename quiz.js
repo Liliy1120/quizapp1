@@ -186,6 +186,7 @@ function checkAnswer() {
 $('form').submit(function(event){   
   event.preventDefault()
   $('.finalscore').hide();
+  $('.rightWrong').show();
   
   let selectedAnswer = $("input:checked").val();
   let correctAnsw = `${STORE[questionNumber].answer}`;
@@ -206,7 +207,6 @@ $('form').submit(function(event){
 //render correct answer and feed back
 function correctAns(){
 $('.correct').show();
-$('.correct').html(`You got it right :)<br> You have been studying! <button class='nextQ'>Next Question</button>`);
 $('.checkme').addClass('hide');
 $('.question').hide();
 
@@ -225,7 +225,7 @@ console.log('updateScore ran')
 //render wrong answer and feed back
 function wrongAns(){
 $('.wrong').show();
-$('.wrong').html(`Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}<button class='nextQ'>Next Question</button>`);
+$('.wrong').prepend(`Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}`);
 $('.checkme').addClass('hide');
 $('.question').hide();
 console.log(questionNumber);
@@ -282,7 +282,7 @@ function startOver() {
 
 
 function nextQuestion() {
-  $('.rightWrong').on('click','.nextQ',function(event){
+  $('.nextQ').on('click',function(event){
   $('.correct').hide();
   $('.wrong').hide();
   $('.question').show();
@@ -301,7 +301,7 @@ function initQuiz() {
   checkAnswer();
   renderQuestion();
   nextQuestion();
-  startOver()
+  startOver();
   console.log(questionNumber);
 }
 
