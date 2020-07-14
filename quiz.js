@@ -109,8 +109,7 @@ function startQuiz(questionNumber) {
        $('.js-startpage').hide();
       $('.question').show()/*removeClass("hide")*/
       $('.board').show()/*removeClass("hide")*/
-      //questionNumber = 1;
-      $('.qnum').text(questionNumber);
+      $('.qnum').text(1);
       console.log('startQuiz ran')
       renderQuestion(questionNumber /*-1*/);
       $('.finalScore').hide();
@@ -124,7 +123,7 @@ console.log('createForm ran');
 //checkAnswer(questionIndex);
 if(questionIndex < STORE.length) {
   return`
-  <form action="" method="post" id:'qForm'>
+  <form action="" id:'qForm'>
   <fieldset>
       <legend class='formQ'>${STORE[questionIndex].question}</legend>
       <label for="1">
@@ -210,6 +209,7 @@ $('.question').hide();
 
 console.log(questionNumber);
 }
+
 //update score points
 function updateScore() {
 score++;
@@ -264,14 +264,13 @@ function startOver() {
   $(document).on('click', '.startOver', function(){
     // location.reload(true);
     console.log('startOver ran')
-    event.preventDefault();
     score = 0;
     questionNumber = 0;
     $('.score').text(0);
-    $('.qnum').text(0);
-    //  startQuiz();
+    $('.qnum').text(1);
     $('.js-startpage').show();
     $('.finalScore').addClass('hide')
+    startQuiz(0);
   });
 }
 
