@@ -78,12 +78,12 @@ const STORE = [
 },
   //8
 {
-  question: "What does 'stict mode' do?",
+  question: "What does 'strict mode' do?",
   options: [
     "It makes it so when anytime a variable is declared without the let or const keyword, an error pops up making it easier to avoid global variables ", 
-    "actually... it doesnt even go here", 
+    "Actually... it doesnt even go here", 
     "It makes it so you have to comment your code", 
-    "it deletes all global variables"
+    "It deletes all global variables"
   ],
   answer: "It makes it so when anytime a variable is declared without the let or const keyword, an error pops up making it easier to avoid global variables "
 },
@@ -123,7 +123,7 @@ console.log('createForm ran');
 //checkAnswer(questionIndex);
 if(questionIndex < STORE.length) {
   return`
-  <form action="" id:'qForm'>
+  <form id ='qForm'>
   <fieldset>
       <legend class='formQ'>${STORE[questionIndex].question}</legend>
       <label for="1">
