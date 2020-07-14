@@ -3,12 +3,14 @@
 }
 
 body {
-    margin: 20px;
+    margin: 0;
     background-color: rgb(255, 255, 255);
-    width: 100%;
     font-family: 'Megrim', cursive;
 }
 
+header , main {
+  margin: auto;
+}
 
 
 h1 {
@@ -24,13 +26,12 @@ h1 {
 
 
 .start-page {
-  height: 700px;
   padding-top: 5px;
-  margin: auto 10px auto 10px;
+  margin: auto;
   text-align: center;
   background-image: url(images/background.jpg);
   background-size: cover;
-  padding-right:-10px;
+  height: 100vh;
 }
 
 
@@ -80,7 +81,6 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 675px;
   width: 375px;
   word-break: break-word;
   color: black;
@@ -129,7 +129,8 @@ fieldset {
   background-image: url(images/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 700px;
+  width: 100vw;
+  height: 100vw;
 }
 
 .checkme {
@@ -151,16 +152,11 @@ fieldset {
 }
 
  
-main {
-  height: 700px;
-}
-
 .hide {
     display: none;
 }
 
 .correct, .wrong {
-  height: 200px;
   text-align: center;
   color:rgb(109, 70, 107);
 }
@@ -260,18 +256,19 @@ label {
     font-size: 48px;
   }
   .start-page, .question {
-    height: 1200px;
     margin-top: 19px;
   }
 
   .start-page {
-    width: 775px;
+    width: 70%;
+    margin: auto;
+    height: 100vh;
+    /* view port 100% */
   }
 
   form {
     padding-top: 300px;
     font-size: 25px;
-    height: 800px;
     width: 600px;
   }
 
@@ -307,7 +304,6 @@ label {
     margin-left:-30px;
   }
 
-
   .nextQ {
     font-size: 30px;
   }
@@ -315,6 +311,7 @@ label {
   .finalscore {
     margin-left: 80px;
     margin-top: 100px;
+
   }
 }
 
@@ -328,9 +325,6 @@ label {
   }
 
   .start-page, .question {
-    width: 1200px;
-    height: 825px;
-    margin-left:19px;
     margin-top: 40px;
   }
 
@@ -339,19 +333,21 @@ label {
   }
 
   .board {
-    width: 1000px;
+    width: 60%;
     font-size: 30px;
     margin-bottom: 30px;
-    margin-left: 100px;
-  }
-
-  .question {
-    height: 900px;
+    margin: auto;
   }
 
   .correct, .wrong {
     padding-left: 70px;
     background-size: 300px;
+  }
+
+  .question {
+    width: 100%;
+    margin: auto;
+    height: 100vh;
   }
 
   .wrong {
