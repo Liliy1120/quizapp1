@@ -185,6 +185,8 @@ function updateQuestionNumber() {
 function checkAnswer() {
 $('form').submit(function(event){   
   event.preventDefault()
+  $('.finalscore').hide();
+  
   let selectedAnswer = $("input:checked").val();
   let correctAnsw = `${STORE[questionNumber].answer}`;
   
@@ -196,9 +198,10 @@ $('form').submit(function(event){
       wrongAns();
       console.log('wrongAns ran');
   }
-  
-});
+
+})
 }
+
 
 //render correct answer and feed back
 function correctAns(){
@@ -266,10 +269,9 @@ function startOver() {
     console.log('startOver ran')
     score = 0;
     questionNumber = 0;
-    $('.score').text(0);
+    $('.score').text(score);
     $('.qnum').text(1);
     $('.js-startpage').show();
-    $('.finalScore').addClass('hide')
     startQuiz(0);
   });
 }
@@ -280,18 +282,16 @@ function startOver() {
 
 
 function nextQuestion() {
-$('.rightWrong').on('click','.nextQ',function(event){
+  $('.rightWrong').on('click','.nextQ',function(event){
   $('.correct').hide();
   $('.wrong').hide();
   $('.question').show();
   console.log('nextQuestion ran')
-updateQuestionNumber();
-renderQuestion();
-
-
-console.log(score);
-console.log('nextQuestion ran');
-});
+  updateQuestionNumber();
+  renderQuestion();
+  console.log(score);
+  console.log('nextQuestion ran');
+  });
 }
 
 
