@@ -81,10 +81,10 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 375px;
   word-break: break-word;
   color: black;
   font-size: 15px;
+  padding-top:40px;
 }
 
 .formQ {
@@ -145,7 +145,7 @@ fieldset {
   font-size:17px;
   text-decoration:none;
   margin: auto; 
-  margin-top: 50px;
+  margin-top: 20px;
   font-size: 20px;
   display: flex;
   justify-content: center;
@@ -335,7 +335,6 @@ label {
   .board {
     width: 60%;
     font-size: 30px;
-    margin-bottom: 30px;
     margin: auto;
   }
 
