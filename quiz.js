@@ -225,7 +225,7 @@ console.log('updateScore ran')
 //render wrong answer and feed back
 function wrongAns(){
 $('.wrong').show();
-$('.wrong').prepend(`Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}`);
+$('.wrong').prepend(`<p class="wrongp"> Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}</p>`);
 $('.checkme').addClass('hide');
 $('.question').hide();
 console.log(questionNumber);
@@ -285,6 +285,7 @@ function nextQuestion() {
   $('.nextQ').on('click',function(event){
   $('.correct').hide();
   $('.wrong').hide();
+  $(".wrongp").empty();
   $('.question').show();
   console.log('nextQuestion ran')
   updateQuestionNumber();
