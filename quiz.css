@@ -67,7 +67,7 @@ p {
   box-shadow: 3px 4px 0px 0px rgb(156, 56, 72);
   background-color:transparent;
   border:1px solid rgb(109, 70, 107);
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 20px; 
   width: 350px;
   margin-left: auto;
@@ -84,7 +84,7 @@ form {
   word-break: break-word;
   color: black;
   font-size: 15px;
-  padding-top:40px;
+  padding-top:100px;
 }
 
 .formQ {
@@ -103,7 +103,8 @@ form {
 fieldset {
   border: 0;
   background-color: rgba(255,255,255, .6);
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Baloo Da 2', cursive;
+  font-weight: 600;
 }
 
 /* Hide the browser's default radio button */
@@ -151,10 +152,6 @@ fieldset {
   justify-content: center;
 }
 
- 
-.hide {
-    display: none;
-}
 
 .correct, .wrong {
   text-align: center;
@@ -206,7 +203,7 @@ fieldset {
   color:  rgb(109, 70, 107);
   text-align: center;
   margin: auto; 
-  display:flex;
+  display: none;
   justify-content: center;
   flex-direction: column;
   margin-top: 15px;
@@ -367,6 +364,8 @@ label {
 
 }
 
-
+.hide {
+  display: none;
+}
 
   
