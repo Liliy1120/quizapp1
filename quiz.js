@@ -112,7 +112,6 @@ function startQuiz(questionNumber) {
       $('.qnum').text(1);
       console.log('startQuiz ran')
       renderQuestion(questionNumber /*-1*/ );
-      $('.finalScore').hide();
   });
 }
 
@@ -233,6 +232,8 @@ function wrongAns() {
 
 function finalScore() { 
   $('.finalscore').show();
+  $('.endscore').show();
+  $('.startOver').show();
   $('.final').text(score)
 
     if (score < 6) {
@@ -297,6 +298,9 @@ function startOver() {
       $('.qnum').text(1);
       $('.js-startpage').show();
       $(".feedback").empty();
+      $('.finalScore').hide();
+      $('.endscore').hide();
+      $('.startOver').hide();
       startQuiz(0);
   });
 }
