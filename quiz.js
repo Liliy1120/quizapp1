@@ -204,11 +204,16 @@ function checkAnswer() {
 
 //render correct answer and feed back
 function correctAns() {
-  $('.correct').show();
+  $('.rightWrong').show()
+  $('.rightWrong p').html(correctContent());
   $('.checkme').addClass('hide');
   $('.question').hide();
-
   console.log(questionNumber);
+}
+
+function correctContent() {
+  let html = `You got it right :)<br> You have been studying! <br><img src="images/correct.jpg">`
+  return html
 }
 
 //update score points
@@ -222,11 +227,16 @@ function updateScore() {
 
 //render wrong answer and feed back
 function wrongAns() {
-  $('.wrong').show();
-  $('.wrong').prepend(`<p class="wrongp"> Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer}</p>`);
+  $('.rightWrong').show()
+  $('.rightWrong p').html(wrongContent())
   $('.checkme').addClass('hide');
   $('.question').hide();
   console.log(questionNumber);
+}
+
+function wrongContent() {
+  let html = `Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer} <br> <img src="images/wrong.png">`
+  return html
 }
 
 
@@ -312,9 +322,9 @@ function startOver() {
 
 function nextQuestion() {
   $('.nextQ').on('click', function(event) {
-      $('.correct').hide();
-      $('.wrong').hide();
-      $(".wrongp").empty();
+      $('.rightWrong').hide();
+      // $('.wrong').hide();
+      // $(".wrongp").empty();
       $('.question').show();
       console.log('nextQuestion ran')
       updateQuestionNumber();
