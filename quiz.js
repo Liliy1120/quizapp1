@@ -148,7 +148,7 @@ function createForm(questionIndex) {
 }
 
 
-//and render next questions
+// render next questions
 function renderQuestion() {
   if (questionNumber < STORE.length) {
       console.log('renderQuestion ran')
@@ -211,6 +211,7 @@ function correctAns() {
   console.log(questionNumber);
 }
 
+//if answered correctly
 function correctContent() {
   let html = `You got it right :)<br> You have been studying! <br><img src="images/correct.jpg">`
   return html
@@ -234,12 +235,13 @@ function wrongAns() {
   console.log(questionNumber);
 }
 
+//if answered incorrectly
 function wrongContent() {
   let html = `Aww, you made a mistake The correct answer is:  ${STORE[questionNumber].answer} <br> <img src="images/wrong.png">`
   return html
 }
 
-
+// renders final score
 function finalScore() { 
   $('.finalscore').show();
   $('.endscore').show();
@@ -270,31 +272,6 @@ function poorScore() {
   return poor;
 };
 
-// const awesome = [
-//   'Wow you have been studying! Wanna try again just for funnzies?',
-// ];
-
-// const ok = [
-//     'You did pretty well! Lets see if you can get all of them correct this time',
-//   ];
-
-//   const poor = [
-//     'Lets study some more and try again',
-//   ];
-
-//   if (score < 6) {
-//     array = poor;
-//   } else if (score === 6) {
-//     array = ok;
-//   } else {
-//     array = awesome;
-//   }
-//   return $('.finalscore').html(
-//     `<h3>${array[0]}</h3>
-//         <h3>Your score is ${score} / 8</h3>
-//         <button class='startOver' type='button'>Try Again?</button>`
-//   );
-// }
 
 //starts quiz over
 

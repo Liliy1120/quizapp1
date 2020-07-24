@@ -152,32 +152,6 @@ fieldset {
 }
 
 
-.correct, .wrong {
-  text-align: center;
-  color:rgb(109, 70, 107);
-}
-
-
-.wrong {
-  padding-top: 175px;
-  font-size: 20px;
-  background-image: url(images/wrong.png);
-  background-size: 200px;
-  background-position: top;
-  background-color:rgb(255, 255, 255);
-  background-repeat: no-repeat;
-  margin: 30px;
-}
-
-.correct {
-  padding-top: 140px;
-  font-size: 30px;
-  background-image: url(images/correct.jpg);
-  background-size: 200px;
-  background-position: top;
-  background-color:rgb(255, 255, 255);
-  background-repeat: no-repeat;
-}
 
 .nextQ {
   box-shadow: 3px 4px 0px 0px rgb(234, 215, 215);
@@ -292,12 +266,6 @@ label {
     margin-top: 30px;
   }
 
-  .correct, .wrong {
-    font-size: 45px;
-    text-align: center;
-    margin-left:-30px;
-  }
-
   .nextQ {
     font-size: 30px;
   }
@@ -311,11 +279,11 @@ label {
 
 @media only screen and (min-width: 1024px) {
   h1 { 
-    font-size: 70px;
+    font-size: 90px;
   }
 
   p {
-    font-size: 40px;
+    font-size: 60px;
   }
 
   .start-page, .question {
@@ -323,18 +291,29 @@ label {
   }
 
   .start{
-    font-size: 30px;
+    font-size: 45px;
   }
 
   .board {
     width: 60%;
-    font-size: 30px;
+    font-size: 50px;
     margin: auto;
   }
 
-  .correct, .wrong {
-    padding-left: 70px;
-    background-size: 300px;
+  .formQ {
+    font-size: 45px;
+  }
+
+  form {
+    font-size: 35px;
+  }
+
+  .checkme {
+    font-size: 40px;
+  }
+
+  img {
+    height: 400px;
   }
 
   .question {
@@ -343,14 +322,8 @@ label {
     height: 100vh;
   }
 
-  .wrong {
-    margin-left: 10px;
-    max-width: 1100px;
-  }
-
-  .correct {
-    max-width: 1100px;
-    margin-left: 30px;
+  .nextQ {
+    font-size: 45px;
   }
 
   .finalscore {
